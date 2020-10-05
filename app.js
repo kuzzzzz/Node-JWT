@@ -11,7 +11,7 @@ app.set("view engine", "ejs");
 
 // database connection
 const dbURI =
-  'mongodb+srv://mudi:GTBank5399@cluster0.lgmnu.mongodb.net/node-auth';
+  "mongodb+srv://devmudi1:smoothies1@cluster0.uco5j.mongodb.net/smoothies-collection";
 mongoose
   .connect(dbURI, {
     useNewUrlParser: true,
