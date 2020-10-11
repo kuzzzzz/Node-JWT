@@ -1,3 +1,4 @@
+var PORT = process.env.PORT || 3636;
 const express = require("express");
 const mongoose = require("mongoose");
 const authRoutes = require("./routes/authRoutes");
