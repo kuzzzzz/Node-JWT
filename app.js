@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const authRoutes = require("./routes/authRoutes");
 const cookieParser = require("cookie-parser");
-const {requireAuth} = require('./Middleware/authMiddleware')
+const { requireAuth,checkUser } = require("./Middleware/authMiddleware");
 
 const app = express();
 
@@ -27,10 +27,9 @@ mongoose
   .catch((err) => console.log(err));
 
 // routes
+app.get("*", checkUser);
 app.get("/", (req, res) => res.render("home"));
 
 // added middleware function to protect routes
 app.get("/smoothies", requireAuth, (req, res) => res.render("smoothies"));
 app.use(authRoutes);
-
-
